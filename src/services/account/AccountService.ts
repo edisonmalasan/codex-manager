@@ -47,7 +47,7 @@ export class AccountService {
       label: validateRequiredText(input.label, 'label'),
       email: normalizeOptionalText(input.email ?? null),
       avatarUrl: normalizeOptionalText(input.avatarUrl ?? null),
-      status: input.status ?? 'unknown',
+      status: validateStatus(input.status ?? 'unknown'),
       secretRef,
       createdAt: now,
       updatedAt: now,
