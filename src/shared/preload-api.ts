@@ -1,3 +1,11 @@
+import type {
+  AccountExportRecord,
+  AccountImportRecord,
+  AccountImportResult,
+  AccountResource,
+  CreateAccountInput,
+  UpdateAccountInput,
+} from './account/account';
 import type { AppInfo, HealthStatus } from './ipc/contracts';
 
 export interface CodexManagerBridge {
@@ -6,6 +14,19 @@ export interface CodexManagerBridge {
   };
   health: {
     ping: () => Promise<HealthStatus>;
+  };
+  accounts: {
+    create: (input: CreateAccountInput) => Promise<AccountResource>;
+    list: () => Promise<AccountResource[]>;
+    update: (
+      id: string,
+      input: UpdateAccountInput,
+    ) => Promise<AccountResource>;
+    delete: (id: string) => Promise<boolean>;
+    exportMetadata: () => Promise<AccountExportRecord[]>;
+    importMetadata: (
+      records: AccountImportRecord[],
+    ) => Promise<AccountImportResult>;
   };
 }
 
