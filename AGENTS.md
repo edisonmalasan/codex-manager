@@ -118,6 +118,31 @@ Use OpenSpec when a change affects:
 
 Small isolated copy edits, styling fixes, tests, and narrow bug fixes may skip OpenSpec. The global `spec` skill may be used for lightweight implementation specs, but OpenSpec owns durable product and architecture changes.
 
+## Git Workflow
+
+For every feature, fix, or refactor:
+
+- Create a dedicated branch:
+  - `feat/<name>`
+  - `fix/<name>`
+  - `refactor/<name>`
+- Implement only the scoped OpenSpec task or requested change.
+- Verify before commit:
+  - `npm run lint`
+  - `npm run type-check`
+  - `npm test`
+  - `npm run package` when Electron/build behavior is affected
+- Commit with Conventional Commits using the `git-commit` skill.
+- Push the feature branch.
+- If implementation is complete and checks pass, merge the branch into `main` and push `main`.
+- Do not include unrelated changes or refactors.
+
+For architecture, persistence, IPC, security, or major UI changes:
+
+- Create or update OpenSpec first.
+- Implement from its tasks.
+- Archive the OpenSpec change only after implementation is verified.
+
 ## Development Commands
 
 Use npm because this repo includes `package-lock.json`.
