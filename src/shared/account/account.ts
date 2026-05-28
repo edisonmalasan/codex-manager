@@ -1,4 +1,4 @@
-import type { SecretReference } from '../../storage/secrets/SecretStorage';
+import type { SecretReference } from '../secrets/secret-reference';
 
 export const ACCOUNT_STATUSES = [
   'active',

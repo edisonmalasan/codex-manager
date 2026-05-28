@@ -1,7 +1,6 @@
-export interface SecretReference {
-  service: string;
-  account: string;
-}
+import type { SecretReference } from '../../shared/secrets/secret-reference';
+
+export type { SecretReference };
 
 export interface SecretStorage {
   getSecret(reference: SecretReference): Promise<string | null>;
