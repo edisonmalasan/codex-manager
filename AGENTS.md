@@ -133,6 +133,7 @@ For every feature, fix, or refactor:
   - `npm test`
   - `npm run package` when Electron/build behavior is affected
 - Commit with Conventional Commits using the `git-commit` skill.
+- Commit step-by-step during implementation. Each commit should represent one coherent task or layer, such as OpenSpec artifacts, data model/migration, service logic, IPC wiring, UI integration, or tests. Do not save a whole feature as one large final commit unless the change is genuinely tiny.
 - Push the feature branch.
 - If implementation is complete and checks pass, merge the branch into `main` and push `main`.
 - Do not include unrelated changes or refactors.
