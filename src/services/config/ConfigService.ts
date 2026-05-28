@@ -15,4 +15,8 @@ export class ConfigService {
   public delete(namespace: string, key: string): boolean {
     return this.configRepository.delete(namespace, key);
   }
+
+  public list(): Array<{ namespace: string; key: string; value: JsonValue }> {
+    return this.configRepository.list();
+  }
 }
