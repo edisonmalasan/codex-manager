@@ -20,6 +20,12 @@ const bridge: CodexManagerBridge = {
     importMetadata: (records) =>
       ipcRenderer.invoke(IPC_CHANNELS.accountImport, records),
   },
+  backups: {
+    create: (input) => ipcRenderer.invoke(IPC_CHANNELS.backupCreate, input),
+    list: () => ipcRenderer.invoke(IPC_CHANNELS.backupList),
+    restore: (id) => ipcRenderer.invoke(IPC_CHANNELS.backupRestore, id),
+    delete: (id) => ipcRenderer.invoke(IPC_CHANNELS.backupDelete, id),
+  },
 };
 
 contextBridge.exposeInMainWorld('codexManager', bridge);
