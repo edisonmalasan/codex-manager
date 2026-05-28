@@ -10,6 +10,16 @@ const bridge: CodexManagerBridge = {
   health: {
     ping: () => ipcRenderer.invoke(IPC_CHANNELS.healthPing),
   },
+  accounts: {
+    create: (input) => ipcRenderer.invoke(IPC_CHANNELS.accountCreate, input),
+    list: () => ipcRenderer.invoke(IPC_CHANNELS.accountList),
+    update: (id, input) =>
+      ipcRenderer.invoke(IPC_CHANNELS.accountUpdate, id, input),
+    delete: (id) => ipcRenderer.invoke(IPC_CHANNELS.accountDelete, id),
+    exportMetadata: () => ipcRenderer.invoke(IPC_CHANNELS.accountExport),
+    importMetadata: (records) =>
+      ipcRenderer.invoke(IPC_CHANNELS.accountImport, records),
+  },
 };
 
 contextBridge.exposeInMainWorld('codexManager', bridge);

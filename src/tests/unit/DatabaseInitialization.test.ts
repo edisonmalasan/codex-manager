@@ -30,6 +30,7 @@ describe('database initialization', () => {
 
     expect(fs.existsSync(paths.databaseFile)).toBe(true);
     expect(tables.map((table) => table.name)).toEqual([
+      'account_resources',
       'app_config',
       'schema_migrations',
     ]);

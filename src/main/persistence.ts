@@ -15,3 +15,7 @@ export function initializeMainProcessPersistence(): Database {
 
   return database;
 }
+
+export function getMainProcessDatabase(): Database {
+  return initializeMainProcessPersistence();
+}
