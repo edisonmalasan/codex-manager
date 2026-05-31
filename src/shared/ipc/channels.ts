@@ -7,6 +7,10 @@ export const IPC_CHANNELS = {
   accountDelete: 'account:delete',
   accountExport: 'account:export',
   accountImport: 'account:import',
+  backupCreate: 'backup:create',
+  backupList: 'backup:list',
+  backupRestore: 'backup:restore',
+  backupDelete: 'backup:delete',
 } as const;
 
 export type IpcChannel = (typeof IPC_CHANNELS)[keyof typeof IPC_CHANNELS];

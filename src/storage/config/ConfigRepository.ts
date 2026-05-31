@@ -7,6 +7,11 @@ interface ConfigRow {
   value_json: string;
 }
 
+interface ConfigListRow extends ConfigRow {
+  namespace: string;
+  key: string;
+}
+
 export class ConfigRepository {
   constructor(private readonly database: Database) {}
 
@@ -45,5 +50,23 @@ export class ConfigRepository {
       .run(namespace, key);
 
     return result.changes > 0;
+  }
+
+  public list(): Array<{ namespace: string; key: string; value: JsonValue }> {
+    return (
+      this.database
+        .prepare(
+          `
+          SELECT namespace, key, value_json
+          FROM app_config
+          ORDER BY namespace ASC, key ASC
+        `,
+        )
+        .all() as ConfigListRow[]
+    ).map((row) => ({
+      namespace: row.namespace,
+      key: row.key,
+      value: JSON.parse(row.value_json) as JsonValue,
+    }));
   }
 }

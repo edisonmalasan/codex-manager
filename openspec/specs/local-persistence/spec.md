@@ -25,7 +25,7 @@ The application SHALL run ordered migrations and record completed migrations so 
 
 ### Requirement: Repository Boundary
 
-The application SHALL access persisted records through repository/service modules rather than renderer code or ad hoc SQL in UI components. Account/resource records SHALL be persisted through the account repository and account service.
+The application SHALL access persisted records through repository/service modules rather than renderer code or ad hoc SQL in UI components. Account/resource records SHALL be persisted through the account repository and account service. Backup snapshot index records SHALL be persisted through the backup repository and backup service.
 
 #### Scenario: Future feature needs persisted data
 
@@ -36,6 +36,11 @@ The application SHALL access persisted records through repository/service module
 
 - **WHEN** account metadata is created, updated, listed, imported, exported, or deleted
 - **THEN** the operation SHALL go through the account service and repository rather than renderer code or direct UI SQL
+
+#### Scenario: Backup system persists snapshot index
+
+- **WHEN** backup metadata is created, listed, restored, or deleted
+- **THEN** the operation SHALL go through the backup service and repository rather than renderer code or direct UI SQL
 
 ### Requirement: App Config Persistence
 
