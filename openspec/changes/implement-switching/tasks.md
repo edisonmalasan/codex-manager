@@ -5,10 +5,10 @@
 
 ## 2. Storage And Contracts
 
-- [ ] 2.1 Add shared switching types, switch statuses, inputs, and results.
-- [ ] 2.2 Add switching state/history migration and include it in default migrations.
-- [ ] 2.3 Add switching repository for active state, history create/list/get/update, and latest successful lookup.
-- [ ] 2.4 Commit the storage and contract slice.
+- [x] 2.1 Add shared switching types, switch statuses, inputs, and results.
+- [x] 2.2 Add switching state/history migration and include it in default migrations.
+- [x] 2.3 Add switching repository for active state, history create/list/get/update, and latest successful lookup.
+- [x] 2.4 Commit the storage and contract slice.
 
 ## 3. Service
 
