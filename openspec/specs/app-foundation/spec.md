@@ -28,7 +28,7 @@ The application SHALL organize source code into domain and process boundaries th
 
 ### Requirement: Typed IPC Foundation
 
-The application SHALL provide a typed request/response IPC foundation with shared contracts and domain-oriented routing. Account/resource and backup operations SHALL use this foundation through typed preload APIs and main-process IPC handlers.
+The application SHALL provide a typed request/response IPC foundation with shared contracts and domain-oriented routing. Account/resource, backup, and quota operations SHALL use this foundation through typed preload APIs and main-process IPC handlers.
 
 #### Scenario: New IPC endpoint is added
 
@@ -44,6 +44,11 @@ The application SHALL provide a typed request/response IPC foundation with share
 
 - **WHEN** renderer code calls a backup operation
 - **THEN** the operation SHALL flow through the typed preload bridge and main-process backup handlers
+
+#### Scenario: Quota IPC endpoint is called
+
+- **WHEN** renderer code calls a quota operation
+- **THEN** the operation SHALL flow through the typed preload bridge and main-process quota handlers
 
 ### Requirement: Renderer App Shell
 

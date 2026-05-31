@@ -33,6 +33,7 @@ describe('database initialization', () => {
       'account_resources',
       'app_config',
       'backup_snapshots',
+      'quota_snapshots',
       'schema_migrations',
     ]);
 

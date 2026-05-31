@@ -26,6 +26,15 @@ const bridge: CodexManagerBridge = {
     restore: (id) => ipcRenderer.invoke(IPC_CHANNELS.backupRestore, id),
     delete: (id) => ipcRenderer.invoke(IPC_CHANNELS.backupDelete, id),
   },
+  quotas: {
+    refresh: (input) => ipcRenderer.invoke(IPC_CHANNELS.quotaRefresh, input),
+    batchRefresh: (input) =>
+      ipcRenderer.invoke(IPC_CHANNELS.quotaBatchRefresh, input),
+    list: () => ipcRenderer.invoke(IPC_CHANNELS.quotaList),
+    get: (accountId) => ipcRenderer.invoke(IPC_CHANNELS.quotaGet, accountId),
+    setThreshold: (input) =>
+      ipcRenderer.invoke(IPC_CHANNELS.quotaSetThreshold, input),
+  },
 };
 
 contextBridge.exposeInMainWorld('codexManager', bridge);
