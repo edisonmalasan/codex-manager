@@ -12,11 +12,11 @@
 
 ## 3. Service
 
-- [ ] 3.1 Replace the placeholder quota service with manual refresh behavior.
-- [ ] 3.2 Implement batch refresh with per-account success and error results.
-- [ ] 3.3 Derive health from readings, terminal states, and low quota thresholds.
-- [ ] 3.4 Update account status and last refreshed timestamps during refresh.
-- [ ] 3.5 Commit the service slice.
+- [x] 3.1 Replace the placeholder quota service with manual refresh behavior.
+- [x] 3.2 Implement batch refresh with per-account success and error results.
+- [x] 3.3 Derive health from readings, terminal states, and low quota thresholds.
+- [x] 3.4 Update account status and last refreshed timestamps during refresh.
+- [x] 3.5 Commit the service slice.
 
 ## 4. IPC And Preload
 
