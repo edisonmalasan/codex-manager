@@ -32,6 +32,7 @@ describe('database initialization', () => {
     expect(tables.map((table) => table.name)).toEqual([
       'account_resources',
       'app_config',
+      'backup_snapshots',
       'schema_migrations',
     ]);
 
