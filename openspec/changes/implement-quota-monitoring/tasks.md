@@ -36,10 +36,10 @@
 
 ## 6. Verification And Archive
 
-- [ ] 6.1 Run `npm run type-check`.
-- [ ] 6.2 Run `npm run lint`.
-- [ ] 6.3 Run `npm test`.
-- [ ] 6.4 Run `npm run package`.
-- [ ] 6.5 Confirm OpenSpec status recognizes all artifacts and tasks.
-- [ ] 6.6 Archive the OpenSpec change after verification.
-- [ ] 6.7 Commit the OpenSpec archive/spec sync.
+- [x] 6.1 Run `npm run type-check`.
+- [x] 6.2 Run `npm run lint`.
+- [x] 6.3 Run `npm test`.
+- [x] 6.4 Run `npm run package`.
+- [x] 6.5 Confirm OpenSpec status recognizes all artifacts and tasks.
+- [x] 6.6 Archive the OpenSpec change after verification.
+- [x] 6.7 Commit the OpenSpec archive/spec sync.
