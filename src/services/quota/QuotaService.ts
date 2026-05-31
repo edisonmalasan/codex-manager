@@ -81,19 +81,22 @@ export class QuotaService {
     );
     const health = deriveHealth(reading, percentRemaining, lowQuotaThreshold);
     const staleAfter = normalizeOptionalText(reading.staleAfter ?? null);
-    const snapshot = this.quotaRepository.upsert({
-      accountId,
-      health,
-      remainingQuota,
-      quotaLimit,
-      percentRemaining,
-      resetAt: normalizeOptionalText(reading.resetAt ?? null),
-      refreshedAt,
-      staleAfter,
-      lowQuotaThreshold,
-      errorMessage: normalizeOptionalText(reading.errorMessage ?? null),
-      updatedAt: refreshedAt,
-    });
+    const snapshot = this.quotaRepository.upsert(
+      {
+        accountId,
+        health,
+        remainingQuota,
+        quotaLimit,
+        percentRemaining,
+        resetAt: normalizeOptionalText(reading.resetAt ?? null),
+        refreshedAt,
+        staleAfter,
+        lowQuotaThreshold,
+        errorMessage: normalizeOptionalText(reading.errorMessage ?? null),
+        updatedAt: refreshedAt,
+      },
+      now,
+    );
 
     await this.accountService.update(accountId, {
       status: toAccountStatus(health),
@@ -173,19 +176,22 @@ export class QuotaService {
       quotaLimit,
     );
     const health = deriveHealth(reading, percentRemaining, lowQuotaThreshold);
-    const snapshot = this.quotaRepository.upsert({
-      accountId,
-      health,
-      remainingQuota,
-      quotaLimit,
-      percentRemaining,
-      resetAt: normalizeOptionalText(reading.resetAt ?? null),
-      refreshedAt,
-      staleAfter: normalizeOptionalText(reading.staleAfter ?? null),
-      lowQuotaThreshold,
-      errorMessage: normalizeOptionalText(reading.errorMessage ?? null),
-      updatedAt: refreshedAt,
-    });
+    const snapshot = this.quotaRepository.upsert(
+      {
+        accountId,
+        health,
+        remainingQuota,
+        quotaLimit,
+        percentRemaining,
+        resetAt: normalizeOptionalText(reading.resetAt ?? null),
+        refreshedAt,
+        staleAfter: normalizeOptionalText(reading.staleAfter ?? null),
+        lowQuotaThreshold,
+        errorMessage: normalizeOptionalText(reading.errorMessage ?? null),
+        updatedAt: refreshedAt,
+      },
+      now,
+    );
 
     return {
       accountId,

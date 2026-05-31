@@ -37,7 +37,7 @@ export interface QuotaRecordInput {
 export class QuotaRepository {
   constructor(private readonly database: Database) {}
 
-  public upsert(snapshot: QuotaRecordInput): QuotaSnapshot {
+  public upsert(snapshot: QuotaRecordInput, now = new Date()): QuotaSnapshot {
     this.database
       .prepare(
         `
@@ -83,7 +83,7 @@ export class QuotaRepository {
         snapshot.updatedAt,
       );
 
-    return toQuotaSnapshot(toQuotaRow(snapshot));
+    return toQuotaSnapshot(toQuotaRow(snapshot), now);
   }
 
   public list(now = new Date()): QuotaSnapshot[] {
