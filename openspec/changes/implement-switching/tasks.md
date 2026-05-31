@@ -12,13 +12,13 @@
 
 ## 3. Service
 
-- [ ] 3.1 Replace the placeholder switching service with current state/history access.
-- [ ] 3.2 Implement manual account switch validation.
-- [ ] 3.3 Implement backup-before-switch behavior.
-- [ ] 3.4 Update active account state and target account last used timestamp.
-- [ ] 3.5 Implement rollback/recovery behavior.
-- [ ] 3.6 Record success, failure, rolled back, and rollback failed history states.
-- [ ] 3.7 Commit the service slice.
+- [x] 3.1 Replace the placeholder switching service with current state/history access.
+- [x] 3.2 Implement manual account switch validation.
+- [x] 3.3 Implement backup-before-switch behavior.
+- [x] 3.4 Update active account state and target account last used timestamp.
+- [x] 3.5 Implement rollback/recovery behavior.
+- [x] 3.6 Record success, failure, rolled back, and rollback failed history states.
+- [x] 3.7 Commit the service slice.
 
 ## 4. IPC And Preload
 
