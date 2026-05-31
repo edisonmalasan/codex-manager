@@ -5,10 +5,10 @@
 
 ## 2. Storage And Contracts
 
-- [ ] 2.1 Add shared quota types, health states, refresh inputs, and results.
-- [ ] 2.2 Add quota snapshot migration and include it in default migrations.
-- [ ] 2.3 Add quota repository for upsert, list, get, and threshold updates.
-- [ ] 2.4 Commit the storage and contract slice.
+- [x] 2.1 Add shared quota types, health states, refresh inputs, and results.
+- [x] 2.2 Add quota snapshot migration and include it in default migrations.
+- [x] 2.3 Add quota repository for upsert, list, get, and threshold updates.
+- [x] 2.4 Commit the storage and contract slice.
 
 ## 3. Service
 
