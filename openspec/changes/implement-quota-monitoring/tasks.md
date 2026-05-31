@@ -20,10 +20,10 @@
 
 ## 4. IPC And Preload
 
-- [ ] 4.1 Add quota IPC channels and handlers.
-- [ ] 4.2 Extend preload API with typed quota methods.
-- [ ] 4.3 Register quota handlers.
-- [ ] 4.4 Commit the IPC/preload slice.
+- [x] 4.1 Add quota IPC channels and handlers.
+- [x] 4.2 Extend preload API with typed quota methods.
+- [x] 4.3 Register quota handlers.
+- [x] 4.4 Commit the IPC/preload slice.
 
 ## 5. Tests
 

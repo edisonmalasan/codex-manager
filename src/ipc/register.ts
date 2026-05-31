@@ -17,6 +17,13 @@ import {
   restoreBackup,
 } from './backup/handlers';
 import { pingHealth } from './health/handlers';
+import {
+  batchRefreshQuota,
+  getQuota,
+  listQuotas,
+  refreshQuota,
+  setQuotaThreshold,
+} from './quota/handlers';
 
 let registered = false;
 
@@ -37,6 +44,11 @@ export function registerIpcHandlers() {
   ipcMain.handle(IPC_CHANNELS.backupList, listBackups);
   ipcMain.handle(IPC_CHANNELS.backupRestore, restoreBackup);
   ipcMain.handle(IPC_CHANNELS.backupDelete, deleteBackup);
+  ipcMain.handle(IPC_CHANNELS.quotaRefresh, refreshQuota);
+  ipcMain.handle(IPC_CHANNELS.quotaBatchRefresh, batchRefreshQuota);
+  ipcMain.handle(IPC_CHANNELS.quotaList, listQuotas);
+  ipcMain.handle(IPC_CHANNELS.quotaGet, getQuota);
+  ipcMain.handle(IPC_CHANNELS.quotaSetThreshold, setQuotaThreshold);
 
   registered = true;
 }
