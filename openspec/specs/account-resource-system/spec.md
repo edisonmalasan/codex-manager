@@ -42,7 +42,7 @@ The system SHALL store account secret values through the secret-storage boundary
 
 ### Requirement: Metadata Import Export
 
-The system SHALL support importing and exporting account pool metadata without raw secrets.
+The system SHALL support importing and exporting account pool metadata without raw secrets. Backup creation SHALL use account metadata export, and backup restore SHALL use account metadata import.
 
 #### Scenario: Accounts are exported
 
@@ -55,6 +55,11 @@ The system SHALL support importing and exporting account pool metadata without r
 - **WHEN** account metadata is imported
 - **THEN** valid accounts SHALL be inserted or updated
 - **THEN** invalid account entries SHALL be reported without stopping valid entries from importing
+
+#### Scenario: Account metadata is backed up and restored
+
+- **WHEN** backup creation or restore needs account metadata
+- **THEN** it SHALL use the account service metadata export and import paths
 
 ### Requirement: Account IPC
 
