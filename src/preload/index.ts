@@ -35,6 +35,14 @@ const bridge: CodexManagerBridge = {
     setThreshold: (input) =>
       ipcRenderer.invoke(IPC_CHANNELS.quotaSetThreshold, input),
   },
+  switching: {
+    getState: () => ipcRenderer.invoke(IPC_CHANNELS.switchingGetState),
+    listHistory: () => ipcRenderer.invoke(IPC_CHANNELS.switchingHistory),
+    switchAccount: (input) =>
+      ipcRenderer.invoke(IPC_CHANNELS.switchingSwitch, input),
+    rollback: (input) =>
+      ipcRenderer.invoke(IPC_CHANNELS.switchingRollback, input),
+  },
 };
 
 contextBridge.exposeInMainWorld('codexManager', bridge);

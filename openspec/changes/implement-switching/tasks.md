@@ -22,10 +22,10 @@
 
 ## 4. IPC And Preload
 
-- [ ] 4.1 Add switching IPC channels and handlers.
-- [ ] 4.2 Extend preload API with typed switching methods.
-- [ ] 4.3 Register switching handlers.
-- [ ] 4.4 Commit the IPC/preload slice.
+- [x] 4.1 Add switching IPC channels and handlers.
+- [x] 4.2 Extend preload API with typed switching methods.
+- [x] 4.3 Register switching handlers.
+- [x] 4.4 Commit the IPC/preload slice.
 
 ## 5. Tests
 
