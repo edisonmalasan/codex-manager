@@ -16,6 +16,10 @@ export const IPC_CHANNELS = {
   quotaList: 'quota:list',
   quotaGet: 'quota:get',
   quotaSetThreshold: 'quota:set-threshold',
+  switchingGetState: 'switching:get-state',
+  switchingHistory: 'switching:history',
+  switchingSwitch: 'switching:switch',
+  switchingRollback: 'switching:rollback',
 } as const;
 
 export type IpcChannel = (typeof IPC_CHANNELS)[keyof typeof IPC_CHANNELS];

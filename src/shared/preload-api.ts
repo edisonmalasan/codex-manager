@@ -20,6 +20,14 @@ import type {
   RefreshQuotaInput,
   SetQuotaThresholdInput,
 } from './quota/quota';
+import type {
+  ManualSwitchInput,
+  RollbackSwitchInput,
+  RollbackSwitchResult,
+  SwitchHistoryRecord,
+  SwitchResult,
+  SwitchState,
+} from './switching/switching';
 
 export interface CodexManagerBridge {
   app: {
@@ -57,6 +65,12 @@ export interface CodexManagerBridge {
     setThreshold: (
       input: SetQuotaThresholdInput,
     ) => Promise<QuotaSnapshot>;
+  };
+  switching: {
+    getState: () => Promise<SwitchState>;
+    listHistory: () => Promise<SwitchHistoryRecord[]>;
+    switchAccount: (input: ManualSwitchInput) => Promise<SwitchResult>;
+    rollback: (input?: RollbackSwitchInput) => Promise<RollbackSwitchResult>;
   };
 }
 

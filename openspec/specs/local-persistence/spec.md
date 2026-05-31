@@ -25,7 +25,7 @@ The application SHALL run ordered migrations and record completed migrations so 
 
 ### Requirement: Repository Boundary
 
-The application SHALL access persisted records through repository/service modules rather than renderer code or ad hoc SQL in UI components. Account/resource records SHALL be persisted through the account repository and account service. Backup snapshot index records SHALL be persisted through the backup repository and backup service. Quota snapshots and thresholds SHALL be persisted through the quota repository and quota service.
+The application SHALL access persisted records through repository/service modules rather than renderer code or ad hoc SQL in UI components. Account/resource records SHALL be persisted through the account repository and account service. Backup snapshot index records SHALL be persisted through the backup repository and backup service. Quota snapshots and thresholds SHALL be persisted through the quota repository and quota service. Switching state and switch history SHALL be persisted through the switching repository and switching service.
 
 #### Scenario: Future feature needs persisted data
 
@@ -46,6 +46,11 @@ The application SHALL access persisted records through repository/service module
 
 - **WHEN** quota metadata is refreshed, listed, read, or configured
 - **THEN** the operation SHALL go through the quota service and repository rather than renderer code or direct UI SQL
+
+#### Scenario: Switching system persists state
+
+- **WHEN** active account state or switch history is changed, listed, or read
+- **THEN** the operation SHALL go through the switching service and repository rather than renderer code or direct UI SQL
 
 ### Requirement: App Config Persistence
 

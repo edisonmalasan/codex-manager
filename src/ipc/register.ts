@@ -24,6 +24,12 @@ import {
   refreshQuota,
   setQuotaThreshold,
 } from './quota/handlers';
+import {
+  getSwitchingState,
+  listSwitchHistory,
+  rollbackSwitch,
+  switchAccount,
+} from './switching/handlers';
 
 let registered = false;
 
@@ -49,6 +55,10 @@ export function registerIpcHandlers() {
   ipcMain.handle(IPC_CHANNELS.quotaList, listQuotas);
   ipcMain.handle(IPC_CHANNELS.quotaGet, getQuota);
   ipcMain.handle(IPC_CHANNELS.quotaSetThreshold, setQuotaThreshold);
+  ipcMain.handle(IPC_CHANNELS.switchingGetState, getSwitchingState);
+  ipcMain.handle(IPC_CHANNELS.switchingHistory, listSwitchHistory);
+  ipcMain.handle(IPC_CHANNELS.switchingSwitch, switchAccount);
+  ipcMain.handle(IPC_CHANNELS.switchingRollback, rollbackSwitch);
 
   registered = true;
 }
