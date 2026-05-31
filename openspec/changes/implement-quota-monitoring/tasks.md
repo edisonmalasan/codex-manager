@@ -27,12 +27,12 @@
 
 ## 5. Tests
 
-- [ ] 5.1 Add tests for manual refresh and quota listing.
-- [ ] 5.2 Add tests for batch refresh partial success.
-- [ ] 5.3 Add tests for health derivation and low quota thresholds.
-- [ ] 5.4 Add tests for stale/fresh timestamp behavior.
-- [ ] 5.5 Add migration initialization coverage for quota tables.
-- [ ] 5.6 Commit the test slice.
+- [x] 5.1 Add tests for manual refresh and quota listing.
+- [x] 5.2 Add tests for batch refresh partial success.
+- [x] 5.3 Add tests for health derivation and low quota thresholds.
+- [x] 5.4 Add tests for stale/fresh timestamp behavior.
+- [x] 5.5 Add migration initialization coverage for quota tables.
+- [x] 5.6 Commit the test slice.
 
 ## 6. Verification And Archive
 
