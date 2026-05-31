@@ -29,13 +29,13 @@
 
 ## 5. Tests
 
-- [ ] 5.1 Add tests for manual switch and active account state.
-- [ ] 5.2 Add tests proving backup is created before switching.
-- [ ] 5.3 Add tests for switch history ordering and metadata.
-- [ ] 5.4 Add tests for rollback and rollback failure behavior.
-- [ ] 5.5 Add tests for missing/disabled target validation.
-- [ ] 5.6 Add migration initialization coverage for switching tables.
-- [ ] 5.7 Commit the test slice.
+- [x] 5.1 Add tests for manual switch and active account state.
+- [x] 5.2 Add tests proving backup is created before switching.
+- [x] 5.3 Add tests for switch history ordering and metadata.
+- [x] 5.4 Add tests for rollback and rollback failure behavior.
+- [x] 5.5 Add tests for missing/disabled target validation.
+- [x] 5.6 Add migration initialization coverage for switching tables.
+- [x] 5.7 Commit the test slice.
 
 ## 6. Verification And Archive
 

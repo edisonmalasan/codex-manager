@@ -35,6 +35,8 @@ describe('database initialization', () => {
       'backup_snapshots',
       'quota_snapshots',
       'schema_migrations',
+      'switch_history',
+      'switching_state',
     ]);
 
     database.close();
